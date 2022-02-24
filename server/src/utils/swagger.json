@@ -1,0 +1,313 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a simple NodeJS API project to fetch the data of clients",
+    "version": "1.0.0",
+    "title": "Clients API"
+  },
+  "schemes": ["http"],
+  "host": "localhost:4000",
+  "basePath": "/",
+  "paths" : {
+    "/clients" : {
+      "get" : {
+        "summary" : "Get all the clients",
+        "description": "Get all the clients",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+                "type": "array"
+            }
+          },
+          "400": {
+            "description": "Invalid status value",
+            "schema": {
+                "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/clients/{id}" : {
+      "get": {
+        "summary": "Get the client data based on id",
+        "description": "Get the client data based on id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "client id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "400": {
+            "description": "Invalid status value",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/client" : {
+      "post" : {
+        "summary" : "Create new client",
+        "description": "Create new client",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "client object",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "400": {
+            "description": "Invalid status value",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },    
+    "/clients/{id}/" : {
+      "put" : {
+        "summary" : "Update the client based on id",
+        "description": "Update the client based on id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "client id that needs to be updated",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "client object",
+            "required": true,
+            "schema": {
+                "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "400": {
+            "description": "Invalid status value",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/clients/{clientId}" : {
+      "delete" : {
+        "summary" : "Delete the client based on id",
+        "description": "Delete the client based on id",
+        "parameters": [
+            {
+                "name": "id",
+                "in": "path",
+                "description": "client id that needs to be deleted",
+                "required": true,
+                "type": "string"
+            }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "400": {
+            "description": "Invalid status value",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/providers" : {
+      "get" : {
+        "summary" : "Get all the providers",
+        "description": "Get all the providers",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+                "type": "array"
+            }
+          },
+          "400": {
+            "description": "Invalid status value",
+            "schema": {
+                "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/providers/{id}" : {
+      "get": {
+        "summary": "Get the provider data based on id",
+        "description": "Get the provider data based on id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "provider id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "400": {
+            "description": "Invalid status value",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/provider" : {
+      "post" : {
+        "summary" : "Create new provider",
+        "description": "Create new provider",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "provider object",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "400": {
+            "description": "Invalid status value",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/providers/{id}/" : {
+      "put" : {
+        "summary" : "Update the provider based on id",
+        "description": "Update the provider based on id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "provider id that needs to be updated",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "provider object",
+            "required": true,
+            "schema": {
+                "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "400": {
+            "description": "Invalid status value",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/providers/{providerId}" : {
+      "delete" : {
+        "summary" : "Delete the provider based on id",
+        "description": "Delete the provider based on id",
+        "parameters": [
+            {
+                "name": "id",
+                "in": "path",
+                "description": "provider id that needs to be deleted",
+                "required": true,
+                "type": "string"
+            }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "400": {
+            "description": "Invalid status value",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    }
+  }
+}
